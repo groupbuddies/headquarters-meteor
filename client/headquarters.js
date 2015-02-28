@@ -11,8 +11,6 @@ if (Meteor.isClient) {
     Headquarters.requestCredential(options, completeCallback);
   };
 } else {
-  var autopublishedFields = ['services.headquarters.email'];
-
   Accounts.addAutopublishFields({
     forLoggedInUser: ['services.headquarters'],
     forOtherUsers: ['services.headquarters.email']
