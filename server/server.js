@@ -20,9 +20,6 @@ Fiber(function() {
     var accessToken = getAccessToken(headquarters, query.code);
     var identity = getIdentity(headquarters);
 
-    console.log('accessToken', accessToken);
-    console.log('identity', identity);
-
     return {
       serviceData: {
         id: identity.email,
@@ -30,7 +27,12 @@ Fiber(function() {
         email: identity.email,
         username: identity.name
       },
-      options: { profile: { name: identity.name } }
+      options: {
+        profile: {
+          name: identity.name,
+          email: identity.email
+        }
+      }
     };
   });
 }).run();
@@ -50,13 +52,13 @@ var getAccessToken = function(headquarters, code) {
 var getIdentity = function(headquarters) {
   var future = new Future();
 
-  headquarters.member.search('gabriel@groupbuddies.com')
+  headquarters.member.me()
     .then(function(me) {
-      future.return(me[0]);
+      future.return(me);
     });
 
   return future.wait();
-}
+};
 
 Headquarters.retrieveCredential = function(token, secret) {
   return OAuth.retrieveCredential(token, secret);

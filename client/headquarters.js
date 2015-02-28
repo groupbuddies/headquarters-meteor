@@ -7,14 +7,14 @@ if (Meteor.isClient) {
       options = null;
     }
 
-    var credentialRequestCompleteCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
-    Headquarters.requestCredential(options, credentialRequestCompleteCallback);
+    var completeCallback = Accounts.oauth.credentialRequestCompleteHandler(callback);
+    Headquarters.requestCredential(options, completeCallback);
   };
 } else {
-  var autopublishedFields = ['email'];
+  var autopublishedFields = ['services.headquarters.email'];
 
   Accounts.addAutopublishFields({
-    forLoggedInUser: autopublishedFields,
-    forOtherUsers: autopublishedFields
+    forLoggedInUser: ['services.headquarters'],
+    forOtherUsers: ['services.headquarters.email']
   });
 }

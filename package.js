@@ -40,5 +40,5 @@ Package.onUse(function(api) {
 });
 
 Npm.depends({
-  'headquarters-node': '0.0.4'
+  'headquarters-node': '0.0.5'
 });
