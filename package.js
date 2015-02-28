@@ -2,7 +2,7 @@ Package.describe({
   name: 'gabrielpoca:headquarters',
   version: '0.0.1',
   summary: 'Meteor wrapper for the Headquarters',
-  git: '',
+  git: 'https://github.com/groupbuddies/headquarters-meteor',
   documentation: 'README.md'
 });
 
