@@ -23,8 +23,6 @@ Package.onUse(function(api) {
 
   api.export('Headquarters');
 
-  api.addFiles('client/headquarters.js');
-
   api.addFiles([
     'server/server.js'
   ], 'server');
