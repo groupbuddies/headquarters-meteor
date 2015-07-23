@@ -1,6 +1,6 @@
-var Headquarters = Npm.require('headquarters-node');
-var Fiber = Npm.require('fibers')
-var Future = Npm.require('fibers/future')
+Headquarters = Npm.require('headquarters-node');
+var Fiber = Npm.require('fibers');
+var Future = Npm.require('fibers/future');
 
 Fiber(function() {
   OAuth.registerService('headquarters', 2, null, function(query) {
@@ -11,10 +11,11 @@ Fiber(function() {
     if (!config)
       throw new ServiceConfiguration.ConfigError();
 
-    var headquarters = Headquarters({
+    headquarters = Headquarters({
       clientID: config.clientId,
       clientSecret: config.secret,
-      callbackURL: OAuth._redirectUri('headquarters', config)
+      callbackURL: OAuth._redirectUri('headquarters', config),
+      type: 'authorizationCode'
     });
 
     var accessToken = getAccessToken(headquarters, query.code);
