@@ -9,6 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.0.3.2');
 
+  api.use('random', ['client', 'server']);
   api.use('http', ['client', 'server']);
   api.use('oauth', ['client', 'server']);
   api.use('oauth2', ['client', 'server']);

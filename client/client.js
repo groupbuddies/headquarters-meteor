@@ -18,7 +18,7 @@ var requestCredential = function(options, credentialRequestCompleteCallback) {
 
   var credentialToken = Random.id();
 
-  var loginUrl = 'https://hq.groupbuddies.com' +
+  var loginUrl = 'https://hq.subvisual.co' +
     "/oauth/authorize?" +
     "state=" + OAuth._stateParam(loginStyle, credentialToken) +
     "&response_type=code&" +
