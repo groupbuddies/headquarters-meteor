@@ -1,6 +1,6 @@
 Package.describe({
   name: 'gabrielpoca:headquarters',
-  version: '0.0.4',
+  version: '0.1.0',
   summary: 'Meteor wrapper for the Headquarters',
   git: 'https://github.com/groupbuddies/headquarters-meteor',
   documentation: 'README.md'
@@ -34,5 +34,5 @@ Package.onUse(function(api) {
 });
 
 Npm.depends({
-  'headquarters-node': '0.1.2'
+  'headquarters-node': '0.2.0'
 });
